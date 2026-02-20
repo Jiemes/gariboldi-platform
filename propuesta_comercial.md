@@ -1,7 +1,7 @@
-# Propuesta Integral: Plataforma de Gestión Odontológica "DentaFlow BA"
+# Propuesta Integral: Plataforma de Gestión Odontológica "Gariboldi & Co"
 
 ## 1. Introducción y Visión
-La presente propuesta busca modernizar la gestión operativa de su red de consultorios en Buenos Aires mediante una plataforma web de última generación. **DentaFlow BA** no es solo un sistema de turnos; es un ecosistema digital diseñado para centralizar la atención clínica, automatizar la administración y maximizar la rentabilidad, permitiendo que los profesionales se enfoquen en lo más importante: la salud del paciente.
+La presente propuesta busca modernizar la gestión operativa de su red de consultorios en Mercedes y Bragado mediante una plataforma web de última generación. **Gariboldi & Co** no es solo un sistema de turnos; es un ecosistema digital diseñado para centralizar la atención clínica, automatizar la administración y maximizar la rentabilidad, permitiendo que los profesionales se enfoquen en lo más importante: la salud del paciente.
 
 ## 2. Los Pilares de la Plataforma
 
@@ -53,4 +53,4 @@ La plataforma garantiza el cumplimiento de la ley de protección de datos person
 
 ---
 
-**DentaFlow BA** representa la evolución necesaria para que su red de consultorios lidere el mercado en Buenos Aires, combinando la calidez del trato local con la eficiencia de la tecnología global.
+**Gariboldi & Co** representa la evolución necesaria para que su red de consultorios lidere el mercado en Mercedes y Bragado, combinando la calidez del trato local con la eficiencia de la tecnología global.

@@ -1,7 +1,7 @@
-# Estrategia de Desarrollo: Plataforma Odontológica Integral (Buenos Aires)
+# Estrategia de Desarrollo: Plataforma Odontológica Integral (Gariboldi & Co)
 
 ## 1. Visión del Proyecto
-Crear una plataforma SaaS "Todo-en-Uno" diseñada específicamente para la realidad del mercado odontológico en Buenos Aires, automatizando la gestión clínica, administrativa y la relación con obras sociales.
+Crear una plataforma SaaS "Todo-en-Uno" diseñada específicamente para la realidad del mercado odontológico en Mercedes y Bragado, automatizando la gestión clínica, administrativa y la relación con obras sociales.
 
 ## 2. Investigación y Diferenciadores (Benchmarking)
 Basado en el análisis de plataformas globales (Open Dental, Curve) y locales (Benty, Bilog):
@@ -41,7 +41,7 @@ Basado en el análisis de plataformas globales (Open Dental, Curve) y locales (B
 - IA para análisis de imágenes radiológicas (Partnership).
 - Dashboard de Business Intelligence para dueños de clínicas.
 
-## 5. Estrategia de Despliegue en Buenos Aires
+## 5. Estrategia de Despliegue en Mercedes y Bragado
 1. **Piloto**: Lanzamiento en 2 consultorios seleccionados de la red.
 2. **Feedback Loop**: Ajustes semanales basados en el uso real de las secretarias y doctores.
 3. **Migración**: Herramientas para importar datos desde Excel u otros sistemas antiguos.
