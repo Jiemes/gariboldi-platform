@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gariboldi & Co - Excelencia Odontológica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #1e293b;
+            --accent: #6366f1;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px), radial-gradient(var(--primary) 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .patient-portal-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+        }
+
+        .chat-bubble {
+            animation: bounce-slow 3s infinite;
+        }
+
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight block leading-none">Gariboldi <span
+                            class="text-sky-500">& Co</span></span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Odontología
+                        Integral</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 font-semibold text-sm">
+                <a href="#especialidades" class="text-slate-600 hover:text-sky-500 transition-colors">Especialidades</a>
+                <a href="#sedes" class="text-slate-600 hover:text-sky-500 transition-colors">Nuestras Sedes</a>
+                <a href="#portal"
+                    class="px-6 py-2.5 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-all">Portal
+                    Paciente</a>
+                <a href="login.html" class="p-2 text-slate-400 hover:text-slate-900" title="Acceso Profesionales"><i
+                        class="fa-solid fa-user-gear"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-24 overflow-hidden">
+        <div class="hero-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-sky-50 text-sky-600 rounded-full text-xs font-bold uppercase">
+                    <i class="fa-solid fa-award"></i> Excelencia en Buenos Aires & Mercedes
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight">La sonrisa que <br><span
+                        class="text-sky-500">siempre soñaste.</span></h1>
+                <p class="text-xl text-slate-500 leading-relaxed max-w-lg">
+                    Combinamos tecnología dental de vanguardia con un trato humano y personalizado. Más que un
+                    consultorio, somos tu equipo de salud dental.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition-all flex items-center gap-3 shadow-xl shadow-slate-200">
+                        Reservar Turno Online <i class="fa-regular fa-calendar-check"></i>
+                    </button>
+                    <button
+                        class="px-8 py-4 bg-white border border-slate-200 rounded-2xl font-bold hover:bg-slate-50 transition-all flex items-center gap-3">
+                        Ver Trabajos <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-white/40 p-4 rounded-[48px] border border-white shadow-2xl backdrop-blur-sm rotate-1">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop"
+                        class="rounded-[40px] shadow-sm" alt="Dentista trabajando">
+                </div>
+                <div
+                    class="absolute -left-12 bottom-12 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 flex items-center gap-4 animate-bounce-slow">
+                    <div class="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lg">4.9/5</p>
+                        <p class="text-xs text-slate-400 font-bold uppercase">Calificación Pacientes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Portal Section (Interactive) -->
+    <section id="portal" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div>
+                        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Tu salud dental <br><span
+                                class="text-sky-400">en la palma de tu mano.</span></h2>
+                        <p class="text-slate-400 text-lg">Hemos digitalizado toda nuestra red de consultorios para que
+                            puedas gestionar tus turnos, ver tus presupuestos y recibir asistencia estés donde estés.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-5">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-sky-400 shrink-0">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">Ingreso con Email</h4>
+                                <p class="text-slate-400 text-sm">Sin contraseñas difíciles. Recibe un código seguro en
+                                    tu mail y accede a tu ficha.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-sky-400 shrink-0">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">Transparencia en Costos</h4>
+                                <p class="text-slate-400 text-sm">Consulta el valor de tu próxima intervención y
+                                    opciones de financiación antes de venir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-[40px] border border-white/10 backdrop-blur-md relative">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-sky-500/20 rounded-full blur-[60px]"></div>
+                    <h3 class="text-2xl font-bold mb-8">Portal Gariboldi & Co</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-tighter">Tu
+                                Correo Electrónico</label>
+                            <input type="email" placeholder="hola@tuemail.com"
+                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-sky-400 transition-all outline-none">
+                        </div>
+                        <button
+                            class="w-full py-4 patient-portal-btn rounded-2xl font-bold text-white transition-all hover:scale-[1.02]">Ingresar
+                            a Mis Turnos</button>
+                        <p class="text-center text-xs text-slate-500">¿Es tu primera vez? <a href="#"
+                                class="text-sky-400 underline font-bold">Regístrate como paciente nuevo</a></p>
+                    </div>
+
+                    <!-- MOCK DATA PREVIEW -->
+                    <div class="mt-10 pt-10 border-t border-white/10">
+                        <p class="text-sm font-bold text-sky-400 mb-4 uppercase">Vista previa de tu portal:</p>
+                        <div class="bg-white/10 p-5 rounded-3xl border border-white/5 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold">PRÓXIMO TURNO</p>
+                                    <p class="font-bold">Martes 25 de Feb - 10:15</p>
+                                </div>
+                                <span class="px-3 py-1 bg-sky-500 text-white text-[10px] rounded-full font-bold">SEDE
+                                    MERCEDES</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-2 border-t border-white/5">
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold">INTERVENCIÓN</p>
+                                    <p class="font-bold">Limpieza + Blanqueamiento</p>
+                                </div>
+                                <p class="font-bold text-sky-400">$32.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Methodology Section -->
+    <section id="especialidades" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-4xl font-bold mb-4">Nuestras Especialidades</h2>
+                <p class="text-slate-500 font-medium">Equipamiento de última generación para diagnósticos precisos y
+                    tratamientos indoloros.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[40px] service-card">
+                    <div
+                        class="w-16 h-16 bg-sky-500 rounded-3xl flex items-center justify-center text-white text-2xl mb-8 shadow-lg shadow-sky-200">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Implantes Dentales</h3>
+                    <p class="text-slate-500 leading-relaxed">Recupera la funcionalidad y estética con materiales de
+                        titanio de grado médico y cirugía guiada por IA.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[40px] service-card">
+                    <div
+                        class="w-16 h-16 bg-indigo-500 rounded-3xl flex items-center justify-center text-white text-2xl mb-8 shadow-lg shadow-indigo-200">
+                        <i class="fa-solid fa-teeth"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ortodoncia Invisible</h3>
+                    <p class="text-slate-500 leading-relaxed">Alinea tu sonrisa sin brackets metálicos. Placas
+                        transparentes cómodas y estéticas.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[40px] service-card">
+                    <div
+                        class="w-16 h-16 bg-emerald-500 rounded-3xl flex items-center justify-center text-white text-2xl mb-8 shadow-lg shadow-emerald-200">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Estética Dental</h3>
+                    <p class="text-slate-500 leading-relaxed">Carillas de porcelana y blanqueamiento laser para una
+                        sonrisa radiante en pocas sesiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="sedes" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">Nuestras Sedes</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div
+                    class="bg-white rounded-[40px] overflow-hidden shadow-xl border border-slate-100 flex flex-col md:flex-row">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&auto=format&fit=crop"
+                        class="md:w-1/2 object-cover grayscale-[0.5]" alt="Sede Mercedes">
+                    <div class="p-8">
+                        <span
+                            class="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-[10px] font-bold uppercase">Sede
+                            Central</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-2">Mercedes</h3>
+                        <p class="text-slate-500 text-sm mb-6">Calle 25 Nº 1234, Mercedes <br>Tel: (02324) 42XXXX</p>
+                        <button class="text-sky-500 font-bold flex items-center gap-2 hover:gap-3 transition-all">Ver en
+                            el Mapa <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-[40px] overflow-hidden shadow-xl border border-slate-100 flex flex-col md:flex-row">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&auto=format&fit=crop"
+                        class="md:w-1/2 object-cover grayscale-[0.5]" alt="Sede Palermo">
+                    <div class="p-8">
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-[10px] font-bold uppercase">Consultorio
+                            Premium</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-2">Palermo (CABA)</h3>
+                        <p class="text-slate-500 text-sm mb-6">Av. Santa Fe 3400, CABA <br>Tel: (011) 48XX-XXXX</p>
+                        <button class="text-sky-500 font-bold flex items-center gap-2 hover:gap-3 transition-all">Ver en
+                            el Mapa <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Button -->
+    <div class="fixed bottom-8 right-8 z-[100] chat-bubble">
+        <button
+            class="w-16 h-16 bg-emerald-500 rounded-full text-white text-3xl shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+        <div
+            class="absolute -top-12 right-0 bg-white px-4 py-2 rounded-2xl shadow-xl text-xs font-bold border border-slate-100 whitespace-nowrap">
+            ¿Tienes alguna duda? 👋
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
+            <div class="col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center text-white"><i
+                            class="fa-solid fa-tooth"></i></div>
+                    <span class="text-2xl font-bold">Gariboldi <span class="text-sky-500">& Co</span></span>
+                </div>
+                <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">Referentes en rehabilitación oral y estética
+                    dental desde hace 20 años en la región.</p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6 uppercase text-xs tracking-widest">Información</h5>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Convenios Obras Sociales</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Protocolos COVID-19</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Segunda Opinión</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6 uppercase text-xs tracking-widest">Legal</h5>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Consentimientos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Protección de Datos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Matrículas Nacionales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-slate-500 text-xs">
+            © 2026 Dr. Julio Gariboldi & Equipo. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>

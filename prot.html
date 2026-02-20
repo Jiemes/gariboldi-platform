@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gariboldi & Co - Plataforma Odontológica Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #6366f1;
+            --accent: #10b981;
+            --bg-glass: rgba(255, 255, 255, 0.7);
+            --border-glass: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+
+        .glass-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .sidebar-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar-item:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .sidebar-item.active {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .odontogram-tooth {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .odontogram-tooth:hover {
+            fill: #bae6fd;
+            transform: scale(1.05);
+        }
+
+        .tooth-damaged {
+            fill: #f87171 !important;
+        }
+
+        .tooth-treated {
+            fill: #34d399 !important;
+        }
+
+        .stat-card {
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .notif-badge {
+            animation: pulse-soft 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 h-screen glass-panel fixed left-0 top-0 flex flex-col p-6 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div
+                class="w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-sky-200">
+                <i class="fa-solid fa-tooth text-xl"></i>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight text-slate-800">Gariboldi <span class="text-sky-500">& Co</span>
+            </h1>
+        </div>
+
+        <nav class="flex-1 space-y-2">
+            <a href="#" class="sidebar-item active p-3 rounded-xl flex items-center gap-3">
+                <i class="fa-solid fa-chart-line w-5"></i>
+                <span class="font-medium">Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-item p-3 rounded-xl flex items-center gap-3 text-slate-500">
+                <i class="fa-solid fa-calendar-days w-5"></i>
+                <span class="font-medium">Agenda</span>
+            </a>
+            <a href="#" class="sidebar-item p-3 rounded-xl flex items-center gap-3 text-slate-500">
+                <i class="fa-solid fa-users w-5"></i>
+                <span class="font-medium">Pacientes</span>
+            </a>
+            <a href="#" class="sidebar-item p-3 rounded-xl flex items-center gap-3 text-slate-500">
+                <i class="fa-solid fa-file-invoice-dollar w-5"></i>
+                <span class="font-medium">Liquidaciones</span>
+            </a>
+            <a href="#" class="sidebar-item p-3 rounded-xl flex items-center gap-3 text-slate-500">
+                <i class="fa-solid fa-stethoscope w-5"></i>
+                <span class="font-medium">Tratamientos</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-6 border-t border-slate-200">
+            <div class="flex items-center gap-3">
+                <img src="https://ui-avatars.com/api/?name=Dr+Julio+Gariboldi&background=0ea5e9&color=fff"
+                    class="w-10 h-10 rounded-full" alt="Avatar">
+                <div>
+                    <p class="text-sm font-bold">Dr. Julio Gariboldi </p>
+                    <p class="text-xs text-slate-400 italic">Odontólogo - Sede Mercedes</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 flex-1 p-8">
+
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-10">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800">Panel General</h2>
+                <p class="text-slate-500">Hola, Dr. Julio Gariboldi. Tienes 8 pacientes programados para hoy.</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex items-center gap-2 glass-panel py-2 px-4 rounded-full text-sm font-medium">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    Consultorio Mercedes 01
+                </div>
+                <button
+                    class="w-10 h-10 glass-panel rounded-full flex items-center justify-center text-slate-500 hover:text-sky-500 transition-colors">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+            <div class="glass-panel p-6 rounded-3xl stat-card">
+                <p class="text-slate-400 text-sm mb-1">Citas Hoy</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-3xl font-bold">08</h3>
+                    <span
+                        class="text-emerald-500 text-xs font-bold bg-emerald-50 mb-1 px-2 py-0.5 rounded-full">+12%</span>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-3xl stat-card">
+                <p class="text-slate-400 text-sm mb-1">Liquidaciones Pendientes</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-3xl font-bold">14</h3>
+                    <span class="text-amber-500 text-xs font-bold bg-amber-50 mb-1 px-2 py-0.5 rounded-full">OSDE /
+                        BRAGADO</span>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-3xl stat-card">
+                <p class="text-slate-400 text-sm mb-1">Pacientes Nuevos (Mes)</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-3xl font-bold">24</h3>
+                    <span class="text-sky-500 text-xs font-bold bg-sky-50 mb-1 px-2 py-0.5 rounded-full">+5%</span>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-3xl stat-card">
+                <p class="text-slate-400 text-sm mb-1">Facturación Proyectada</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-3xl font-bold">$1.2M</h3>
+                    <span class="text-slate-400 text-xs font-bold">ARS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Odontograma Section -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-8">
+                        <div>
+                            <h3 class="text-xl font-bold">Odontograma Digital - <span class="text-sky-600">Lucía
+                                    Martínez</span></h3>
+                            <p
+                                class="text-sm text-slate-500 font-medium whitespace-nowrap overflow-hidden text-ellipsis">
+                                OSDE 210 - Plan Jóven</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="px-4 py-2 bg-slate-100 rounded-xl text-sm font-bold hover:bg-slate-200 transition-colors">Historial</button>
+                            <button
+                                class="px-4 py-2 bg-sky-500 text-white rounded-xl text-sm font-bold shadow-lg shadow-sky-200 hover:bg-sky-600 transition-colors">Nueva
+                                Intervención</button>
+                        </div>
+                    </div>
+
+                    <!-- SVG Odontograma mockup -->
+                    <div class="w-full flex flex-col gap-8 py-10 bg-white/40 rounded-2xl border border-white/60">
+                        <div class="flex justify-center gap-1">
+                            <!-- Superior Left -->
+                            <div class="flex items-center gap-1">
+                                <template id="tooth-template">
+                                    <svg class="odontogram-tooth w-10 h-12" viewBox="0 0 40 50">
+                                        <rect x="5" y="5" width="30" height="30" rx="4" fill="#f1f5f9" stroke="#cbd5e1"
+                                            stroke-width="1.5" />
+                                        <path d="M10 15 L30 15 M15 10 L15 30 M25 10 L25 30" stroke="#cbd5e1"
+                                            stroke-width="1" />
+                                        <text x="50%" y="45" text-anchor="middle" font-size="8" fill="#94a3b8"
+                                            class="font-bold"></text>
+                                    </svg>
+                                </template>
+                                <div id="upper-arc" class="flex gap-1"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-1">
+                            <div id="lower-arc" class="flex gap-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-6 text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded bg-red-400"></span>
+                            <span>Caries Detectada</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded bg-emerald-400"></span>
+                            <span>Tratamiento Realizado</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded bg-slate-200"></span>
+                            <span>Pieza Sana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treatments / Logs -->
+                <div class="glass-panel p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-6">Últimas Intervenciones</h3>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center justify-between p-4 bg-white/40 rounded-2xl border border-white/60">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Resina Fotocurado - Pieza 18</p>
+                                    <p class="text-xs text-slate-400">Hoy, 10:15 AM - Dr. Julio Gariboldi</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-slate-600">ARS $25.000</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-4 bg-white/40 rounded-2xl border border-white/60 opacity-60">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Limpieza General Prolija</p>
+                                    <p class="text-xs text-slate-400">12 Feb - Dr. Julio Gariboldi</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-slate-600">Finalizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Files / Digitization Module -->
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold">Archivo Histórico Digital</h3>
+                            <p class="text-xs text-slate-500 font-medium">Fichas de papel escaneadas (Pre-2026)</p>
+                        </div>
+                        <button
+                            class="px-4 py-2 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-xl text-xs font-bold hover:bg-indigo-100 transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-up"></i> Vincular Nueva Ficha
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="group relative aspect-[3/4] bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 overflow-hidden cursor-pointer hover:border-indigo-300 transition-all">
+                            <img src="https://images.unsplash.com/photo-1586769852044-692d6e3703a0?w=200&auto=format&fit=crop"
+                                class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity"
+                                alt="Ficha 1">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-2 text-center">
+                                <i
+                                    class="fa-solid fa-magnifying-glass-plus text-slate-400 group-hover:text-indigo-500 text-xl mb-1"></i>
+                                <p class="text-[10px] font-bold text-slate-500 leading-tight">Ficha 2024 <br> Carillas
+                                    Provis.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative aspect-[3/4] bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 overflow-hidden cursor-pointer hover:border-indigo-300 transition-all">
+                            <img src="https://images.unsplash.com/photo-1618044733300-9472151774ca?w=200&auto=format&fit=crop"
+                                class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity"
+                                alt="Ficha 2">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-2 text-center">
+                                <i
+                                    class="fa-solid fa-magnifying-glass-plus text-slate-400 group-hover:text-indigo-500 text-xl mb-1"></i>
+                                <p class="text-[10px] font-bold text-slate-500 leading-tight">Ficha 2025 <br> Conducto
+                                    Pieza 12</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-slate-50 rounded-2xl border border-slate-100 flex flex-col items-center justify-center p-4 text-center">
+                            <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-300 mb-2">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <p class="text-[10px] font-bold text-slate-300 uppercase">Escanear <br> desde App</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-indigo-50/50 rounded-2xl border border-indigo-100/30">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-info text-indigo-400 mt-0.5"></i>
+                            <p class="text-[11px] text-indigo-700 leading-relaxed">
+                                <strong>Tip de Digitalización:</strong> No es necesario transcribir todo. Puedes tomar
+                                una foto a la ficha de papel desde la App y el sistema la vinculará automáticamente
+                                usando reconocimiento de texto (OCR).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Agenda & Patients -->
+            <div class="space-y-8">
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold">Próximos Turnos</h3>
+                        <a href="#" class="text-sky-500 text-sm font-bold hover:underline">Ver todos</a>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="relative pl-6 border-l-2 border-sky-400">
+                            <div class="absolute -left-1.5 top-0 w-3 h-3 bg-sky-400 rounded-full border-2 border-white">
+                            </div>
+                            <p class="text-xs text-sky-500 font-bold mb-1">AHORA - 11:30</p>
+                            <p class="font-bold">Carlos Peirano</p>
+                            <p class="text-sm text-slate-400">Implante Oseo - Paso 2</p>
+                        </div>
+                        <div class="relative pl-6 border-l-2 border-slate-200">
+                            <div
+                                class="absolute -left-1.5 top-0 w-3 h-3 bg-slate-200 rounded-full border-2 border-white">
+                            </div>
+                            <p class="text-xs text-slate-400 font-bold mb-1">12:15</p>
+                            <p class="font-bold">Marta Ibañez</p>
+                            <p class="text-sm text-slate-400">Consultas de Control</p>
+                        </div>
+                        <div class="relative pl-6 border-l-2 border-slate-200">
+                            <div
+                                class="absolute -left-1.5 top-0 w-3 h-3 bg-slate-200 rounded-full border-2 border-white">
+                            </div>
+                            <p class="text-xs text-slate-400 font-bold mb-1">13:00</p>
+                            <p class="font-bold">Esteban Quito</p>
+                            <p class="text-sm text-slate-400">Extracción Simple</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patients Activity / Workflow Dynamic -->
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold">Flujo de Trabajo - Sede Mercedes</h3>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-[10px] font-bold">EFICIENCIA
+                                ALTA</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Step 1: Arrival -->
+                        <div
+                            class="group relative flex items-start gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all border border-transparent hover:border-white/80">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <p class="font-bold">Llegada: Carlos Peirano</p>
+                                    <span class="text-[10px] font-bold text-slate-400">11:30 AM</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mb-2">Recepción completada. Obra Social OSDE validada.
+                                </p>
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-sky-500 text-white rounded-lg text-[10px] font-bold">Pasar a
+                                        Consultorio</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Attention (In progress) -->
+                        <div
+                            class="group relative flex items-start gap-4 p-4 bg-sky-500/5 rounded-2xl border border-sky-200">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center shrink-0 animate-pulse">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <p class="font-bold text-sky-900">En Atención: Lucía Martínez</p>
+                                    <span
+                                        class="px-2 py-0.5 bg-sky-500 text-white rounded-full text-[9px] font-bold">DURACIÓN:
+                                        12min</span>
+                                </div>
+                                <p class="text-xs text-sky-700/70 mb-2">Dr. Julio Gariboldi está actualizando el
+                                    odontograma.</p>
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-white border border-sky-200 text-sky-600 rounded-lg text-[10px] font-bold">Ver
+                                        Historia Clínica</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment & Next Appt -->
+                        <div
+                            class="group relative flex items-start gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all border border-transparent hover:border-white/80">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <p class="font-bold">Egreso: Marta Ibañez</p>
+                                    <span class="text-[10px] font-bold text-slate-400">Hace 5min</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mb-2">Cobro realizado ($25.000). Próximo turno
+                                    agendado: 15/03.</p>
+                                <div class="flex gap-2 text-sky-500 font-bold text-[10px]">
+                                    <span class="flex items-center gap-1 cursor-pointer hover:underline"><i
+                                            class="fa-brands fa-whatsapp"></i> Recordat. enviado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automated Notifications -->
+                <div class="glass-panel p-8 rounded-3xl bg-gradient-to-br from-indigo-500 to-sky-600 text-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </div>
+                        <h3 class="font-bold">Automatización</h3>
+                    </div>
+                    <p class="text-sm text-white/80 mb-6 font-medium">Se han enviado 12 correos de recordatorio y 5
+                        planillas de obra social automáticamente hoy.</p>
+                    <div class="bg-white/10 p-4 rounded-2xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Mail Próxima Consulta</p>
+                            <p class="text-[10px] text-white/60">Enviado a Marta I. a las 12:45</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Obra Social Alerts -->
+                <div class="glass-panel p-8 rounded-3xl border-l-4 border-amber-400">
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-exclamation text-amber-500"></i>
+                        Atención Secretarías
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4 font-medium">Actualización de Códigos OSDE (Febrero 2026).
+                        Requiere validación de sucursal.</p>
+                    <button
+                        class="w-full py-2 bg-amber-50 text-amber-600 rounded-xl text-xs font-bold border border-amber-100 hover:bg-amber-100 transition-colors">Actualizar
+                        Nomenclador Mercedes</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple JS for tooth arcs
+        const upperArc = document.getElementById('upper-arc');
+        const lowerArc = document.getElementById('lower-arc');
+        const template = document.getElementById('tooth-template');
+
+        for (let i = 18; i >= 11; i--) createTooth(i, upperArc);
+        for (let i = 21; i <= 28; i++) createTooth(i, upperArc);
+        for (let i = 48; i >= 41; i--) createTooth(i, lowerArc);
+        for (let i = 31; i <= 38; i++) createTooth(i, lowerArc);
+
+        function createTooth(num, container) {
+            const clone = template.content.cloneNode(true);
+            const svg = clone.querySelector('svg');
+            const text = clone.querySelector('text');
+            text.textContent = num;
+
+            // Random damage for demo
+            if (num === 18) svg.querySelector('rect').classList.add('tooth-damaged');
+            if (num === 24) svg.querySelector('rect').classList.add('tooth-treated');
+
+            svg.addEventListener('click', () => {
+                const rect = svg.querySelector('rect');
+                if (rect.classList.contains('tooth-damaged')) {
+                    rect.classList.remove('tooth-damaged');
+                    rect.classList.add('tooth-treated');
+                } else if (rect.classList.contains('tooth-treated')) {
+                    rect.classList.remove('tooth-treated');
+                } else {
+                    rect.classList.add('tooth-damaged');
+                }
+            });
+
+            container.appendChild(clone);
+        }
+    </script>
+</body>
+
+</html>
